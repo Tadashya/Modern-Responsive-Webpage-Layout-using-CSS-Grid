@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Responsive Layout</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f1f5f9;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-areas: "header header" "sidebar main" "footer footer";
+            grid-template-columns: 260px 1fr;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+        /* HEADER */
+        
+        header {
+            grid-area: header;
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        /* SIDEBAR */
+        
+        aside {
+            grid-area: sidebar;
+            background: #0f172a;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        aside h3 {
+            margin-top: 0;
+        }
+        
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        aside ul li {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 6px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        
+        aside ul li:hover {
+            background: #2563eb;
+        }
+        /* MAIN */
+        
+        main {
+            grid-area: main;
+            padding: 20px;
+        }
+        
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        /* FOOTER */
+        
+        footer {
+            grid-area: footer;
+            background: #0f172a;
+            color: #cbd5f5;
+            text-align: center;
+            padding: 12px;
+        }
+        /* MOBILE */
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas: "header" "main" "sidebar" "footer";
+                grid-template-columns: 1fr;
+            }
+            aside {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            My Modern Website
+        </header>
+
+        <aside>
+            <h3>Menu</h3>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="card">
+                <h2>Main Content</h2>
+                <p>This layout uses better contrast with a dark sidebar and gradient header for a modern UI look.</p>
+            </div>
+        </main>
+
+        <footer>
+            © 2026 Designed by You
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
